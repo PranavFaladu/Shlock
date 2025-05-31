@@ -1,371 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shlok Enterprise - Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <!-- Logo -->
-      <div class="nav-logo">
-        <img src="logo/logo.jpeg" alt="Shlok Enterprise Logo">
-      </div>
 
-      <!-- Desktop Navigation -->
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="product.html" class="nav-link">Products</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shlok Enterprise - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
 
-      <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" id="mobile-menu-btn">
-        <svg viewBox="0 0 24 24">
-          <path d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-
-      <!-- Mobile Menu -->
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="product.html">Products</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-
-    <div class="slider-container">
-      <div class="slides">
-        <div class="slide">
-          <div class="slide-content">
-            <div class="feature-list">
-            </div>
-            <div class="tagline"><h1>Welcome To Shlok Enterprises</h1>We Are One Of The Best Stociest & Service Provider From 2007 For Industries.</div>
-          </div>
-          <div class="slide-image">
-            <img src="logo/logo1.png" alt="OSKO Industrial Valve" />
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="slide-content">
-            <div class="feature-list">
-            
-            </div>
-            <div class="tagline">We Are An Authorized Channel Partner For <br> Valves 
-               And Non-metallic Pipes And Fittings<br> And Are Providing Integrated Solutions For<br> The Industry.</div>
-          </div>
-          <div class="slide-image">
-            <img src="logo/Logo 2.png" alt="OSKO Valve Product" />
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="slide-content">
-            <div class="feature-list">
-          
-            </div>
-            <div class="tagline">With best experience in the field of valve manufacturing, We Offer wide range of valves solutions for all types of industrial requirements</div>
-          </div>
-          <div class="slide-image">
-            <img src="logo/Logo 3.png" alt="OSKO Valve Technology" />
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="slide-content">
-            <div class="feature-list">
-          
-            </div>
-            <div class="tagline">We not only control quality but assure also by observing the strictest quality standards. The Company also observes trouble free performance at every
-              level to prove its class product.</div>
-          </div>
-          <div class="slide-image">
-            <img src="logo/Logo 4.png" alt="OSKO Valve Engineering" />
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="slide-content">
-            <div class="feature-list">
-              
-            </div>
-            <div class="tagline">we take pride in being a trusted partner to industries worldwide. We're not just a valve supplier - we're a solutions provider
-              dedicated to your success.</div>
-          </div>
-          <div class="slide-image">
-            <img src="logo/Logo 5.png" alt="OSKO Customer Support" />
-          </div>
-        </div>
-      </div>
-
-      <button class="prev-btn">&#10094;</button>
-      <button class="next-btn">&#10095;</button>
-
-      <div class="slide-indicators">
-        <div class="indicator active"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
-      </div>
-
-      <div class="red-border"></div>
+<body class="bg-gray-50">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="nav-logo">
+      <img src="logo/logo.jpeg" alt="Shlok Enterprise Logo">
     </div>
 
-    <div class="container mx-auto px-4 py-16" id="about">
-      <div class="flex flex-col md:flex-row items-center gap-10">
-        <div class="md:w-1/2 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
-            Senso Valves Is One Of The Biggest Manufacturers & Exporters Of
-            Industrial Valves In India
-          </h2>
-          <p class="text-xl text-gray-600">The Largest Exporter of <a href="#" class="text-primary-color hover:underline font-medium">Valves</a></p>
-          <div class="image-section mt-8 rounded-lg overflow-hidden shadow-lg">
-            <img src="logo/Logo 2.png" alt="OSKO Valve Product" class="w-full h-auto transition-transform duration-500 hover:scale-105" />
+    <!-- Desktop Navigation -->
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="product.html" class="nav-link">Products</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="product.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="slider-container">
+    <div class="slides">
+      <div class="slide">
+        <div class="slide-content">
+          <div class="feature-list">
+          </div>
+          <div class="tagline">
+            <h1>Welcome To Shlok Enterprises</h1>We Are One Of The Best Stociest & Service Provider From 2007 For
+            Industries.
           </div>
         </div>
-        <div class="md:w-1/2">
-          <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block">
-            Why Senso Valves?
-            <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-color"></span>
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-primary-color">
-              <div class="feature-icon">
-                <img src="logo/dislike.png" alt="Best Quality" class="h-14 w-14" />
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-gray-800">Best Quality</h3>
-              <p class="text-gray-600">
-                Our knowledge in the domain blended with the vast experience has
-                enabled us to serve our customers with the best they need.
-              </p>
-            </div>
-            <div class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-secondary-color">
-              <div class="feature-icon">
-                <img src="logo/rupee-indian.png" alt="Exact Price" class="h-14 w-14" />
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-gray-800">Exact Price</h3>
-              <p class="text-gray-600">We aim to provide more than best in worth money Price.</p>
-            </div>
-            <div class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-accent-color">
-              <div class="feature-icon">
-                <img src="logo/rating_7980008.png" alt="Satisfaction" class="h-14 w-14" />
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-gray-800">Satisfaction Response</h3>
-              <p class="text-gray-600">
-                Customer satisfaction is what makes us happy and we look up to.
-              </p>
-            </div>
-            <div class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-primary-color">
-              <div class="feature-icon">
-                <img src="logo/clock.png" alt="Timely Delivery" class="h-14 w-14" />
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-gray-800">Timely Delivery</h3>
-              <p class="text-gray-600">Timely Delivery with quality work is what we are known for.</p>
-            </div>
+        <div class="slide-image">
+          <img src="logo/logo1.png" alt="OSKO Industrial Valve" />
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-content">
+          <div class="feature-list">
+
           </div>
+          <div class="tagline">We Are An Authorized Channel Partner For <br> Valves
+            And Non-metallic Pipes And Fittings<br> And Are Providing Integrated Solutions For<br> The Industry.</div>
+        </div>
+        <div class="slide-image">
+          <img src="logo/Logo 2.png" alt="OSKO Valve Product" />
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-content">
+          <div class="feature-list">
+
+          </div>
+          <div class="tagline">With best experience in the field of valve manufacturing, We Offer wide range of valves
+            solutions for all types of industrial requirements</div>
+        </div>
+        <div class="slide-image">
+          <img src="logo/Logo 3.png" alt="OSKO Valve Technology" />
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-content">
+          <div class="feature-list">
+
+          </div>
+          <div class="tagline">We not only control quality but assure also by observing the strictest quality standards.
+            The Company also observes trouble free performance at every
+            level to prove its class product.</div>
+        </div>
+        <div class="slide-image">
+          <img src="logo/Logo 4.png" alt="OSKO Valve Engineering" />
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-content">
+          <div class="feature-list">
+
+          </div>
+          <div class="tagline">we take pride in being a trusted partner to industries worldwide. We're not just a valve
+            supplier - we're a solutions provider
+            dedicated to your success.</div>
+        </div>
+        <div class="slide-image">
+          <img src="logo/Logo 5.png" alt="OSKO Customer Support" />
         </div>
       </div>
     </div>
 
-    <section class="stats-section">
-      <div class="overlay">
-        <h1>
-          The Valve, Product <span class="highlight">Manufacturing</span> Industries.
-        </h1>
-        <div class="stats-grid">
-          <div class="stat-item">
-            <i class="fas fa-users"></i>
-            <h2>500+</h2>
-            <p>Trusted Clients</p>
+    <button class="prev-btn">&#10094;</button>
+    <button class="next-btn">&#10095;</button>
+
+    <div class="slide-indicators">
+      <div class="indicator active"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+    </div>
+
+    <div class="red-border"></div>
+  </div>
+
+  <div class="container mx-auto px-4 py-16" id="about">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2 space-y-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+          Senso Valves Is One Of The Biggest Manufacturers & Exporters Of
+          Industrial Valves In India
+        </h2>
+        <p class="text-xl text-gray-600">The Largest Exporter of <a href="#"
+            class="text-primary-color hover:underline font-medium">Valves</a></p>
+        <div class="image-section mt-8 rounded-lg overflow-hidden shadow-lg">
+          <img src="logo/Logo 2.png" alt="OSKO Valve Product"
+            class="w-full h-auto transition-transform duration-500 hover:scale-105" />
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block">
+          Why Senso Valves?
+          <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-color"></span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div
+            class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-primary-color">
+            <div class="feature-icon">
+              <img src="logo/dislike.png" alt="Best Quality" class="h-14 w-14" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">Best Quality</h3>
+            <p class="text-gray-600">
+              Our knowledge in the domain blended with the vast experience has
+              enabled us to serve our customers with the best they need.
+            </p>
           </div>
-          <div class="stat-item">
-            <i class="fas fa-project-diagram"></i>
-            <h2>500+</h2>
-            <p>Finished Projects</p>
+          <div
+            class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-secondary-color">
+            <div class="feature-icon">
+              <img src="logo/rupee-indian.png" alt="Exact Price" class="h-14 w-14" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">Exact Price</h3>
+            <p class="text-gray-600">We aim to provide more than best in worth money Price.</p>
           </div>
-          <div class="stat-item">
-            <i class="fas fa-industry"></i>
-            <h2>18</h2>
-            <p>Years of Experience</p>
+          <div
+            class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-accent-color">
+            <div class="feature-icon">
+              <img src="logo/rating_7980008.png" alt="Satisfaction" class="h-14 w-14" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">Satisfaction Response</h3>
+            <p class="text-gray-600">
+              Customer satisfaction is what makes us happy and we look up to.
+            </p>
           </div>
-          <div class="stat-item">
-            <i class="fas fa-balance-scale"></i>
-            <h2>2000</h2>
-            <p>Nos Per Month Capacity</p>
+          <div
+            class="feature-block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-primary-color">
+            <div class="feature-icon">
+              <img src="logo/clock.png" alt="Timely Delivery" class="h-14 w-14" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">Timely Delivery</h3>
+            <p class="text-gray-600">Timely Delivery with quality work is what we are known for.</p>
           </div>
         </div>
       </div>
-    </section>
-  
-    <section class="py-16 px-4 sm:px-6 lg:px-12 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 text-center">Products We Offer</h2>
-        <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">Explore our wide range of high-quality industrial valves and solutions</p>
-      
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+    </div>
+  </div>
+
+  <section class="stats-section light-theme">
+  <div class="stats-container">
+    <h1>
+      The Valve, Product <span class="highlight-red">Manufacturing</span> Industries.
+    </h1>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h2>500+</h2>
+        <p>Trusted Clients</p>
+      </div>
+      <div class="stat-item">
+        <h2>500+</h2>
+        <p>Finished Projects</p>
+      </div>
+      <div class="stat-item">
+        <h2>18</h2>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-item">
+        <h2>2000</h2>
+        <p>Nos Per Month Capacity</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="py-16 px-4 sm:px-6 lg:px-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 text-center">Products We Offer</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">Explore our wide range of high-quality industrial
+        valves and solutions</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
         <!-- Product Card 1 -->
-        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-1">
+        <div
+          class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-1">
           <img src="logo/Sensp.png" alt="Aluminium Valve" class="mb-4 h-48 object-contain">
           <h3 class="font-semibold text-lg">Senso Manual & Automation Valves</h3>
         </div>
-    
+
         <!-- Product Card 2 -->
-        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-2">
+        <div
+          class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-2">
           <img src="logo/Vectus PPRC.png" alt="Wafer Type Valve" class="mb-4 h-48 object-contain">
           <h3 class="font-semibold text-lg">Vectus PPRC Pipes & Fittings</h3>
         </div>
-    
+
         <!-- Product Card 3 -->
-        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-3">
+        <div
+          class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-3">
           <img src="logo/Vectus Composite.jpg" alt="Double Offset Valve" class="mb-4 h-48 object-contain">
           <h3 class="font-semibold text-lg">Vectus Composite Pipes & Fittings</h3>
         </div>
-    
+
         <!-- Product Card 4 -->
-        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-4">
+        <div
+          class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-4">
           <img src="logo/HDPE.jpg" alt="Ball Valve" class="mb-4 h-48 object-contain">
           <h3 class="font-semibold text-lg">HDPE/PP Pipes & Fittings</h3>
         </div>
-    
+
         <!-- Product Card 5 -->
-        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-5">
+        <div
+          class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-5">
           <img src="logo/5_img.png" alt="Other Valve" class="mb-4 h-48 object-contain">
           <h3 class="font-semibold text-lg">Fabrication For Non-Metallic Pipes & Fittings</h3>
         </div>
       </div>
-    </section>
-    
-  
-      <!-- Button -->
-      <div class="mt-10 py-5 flex justify-center">
-        <button class="px-6 py-2 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition rounded-lg">
-          <a href="product.html">VIEW MORE PRODUCTS</a>
-         
-        </button>
-      </div>
-    </section>  
+  </section>
 
-    <script>
-      // Toggle mobile menu
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
 
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+  <!-- Button -->
+  <!-- ✅ Optional: Product Button Hover Polish -->
+  <div class="mt-10 py-5 flex justify-center">
+    <button
+      class="px-6 py-2 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition rounded-lg shadow hover:shadow-lg transform hover:scale-105">
+      <a href="product.html">VIEW MORE PRODUCTS</a>
+    </button>
+  </div>
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const menuBtn = document.getElementById("mobile-menu-btn"); // ✅ fixed ID
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    const slides = document.querySelector(".slides");
+    const slideItems = document.querySelectorAll(".slide");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    const indicators = document.querySelectorAll(".indicator");
+
+    let currentSlide = 0;
+    const totalSlides = slideItems.length;
+
+    // Set initial position
+    function updateSliderPosition() {
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle("active", index === currentSlide);
       });
+    }
 
-      const slides = document.querySelector(".slides");
-      const slideItems = document.querySelectorAll(".slide");
-      const prevBtn = document.querySelector(".prev-btn");
-      const nextBtn = document.querySelector(".next-btn");
-      const indicators = document.querySelectorAll(".indicator");
+    // Next slide
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSliderPosition();
+    }
 
-      let currentSlide = 0;
-      const totalSlides = slideItems.length;
+    // Previous slide
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSliderPosition();
+    }
 
-      // Set initial position
-      function updateSliderPosition() {
-        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    // Auto slide
+    let slideInterval = setInterval(nextSlide, 3000);
 
-        // Update indicators
-        indicators.forEach((indicator, index) => {
-          indicator.classList.toggle("active", index === currentSlide);
-        });
-      }
+    // Reset timer on manual navigation
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 5000);
+    }
 
-      // Next slide
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
+    // Event listeners
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      resetInterval();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      resetInterval();
+    });
+
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        currentSlide = index;
         updateSliderPosition();
-      }
+        resetInterval();
+      });
+    });
 
-      // Previous slide
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSliderPosition();
-      }
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-      // Auto slide
-      let slideInterval = setInterval(nextSlide, 5000);
+    slides.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
 
-      // Reset timer on manual navigation
-      function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000);
-      }
+    slides.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
 
-      // Event listeners
-      nextBtn.addEventListener("click", () => {
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left
         nextSlide();
         resetInterval();
-      });
-
-      prevBtn.addEventListener("click", () => {
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right
         prevSlide();
         resetInterval();
-      });
-
-      // Indicator clicks
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener("click", () => {
-          currentSlide = index;
-          updateSliderPosition();
-          resetInterval();
-        });
-      });
-
-      // Touch events for mobile
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      slides.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      });
-
-      slides.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-      });
-
-      function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-          // Swipe left
-          nextSlide();
-          resetInterval();
-        } else if (touchEndX > touchStartX + swipeThreshold) {
-          // Swipe right
-          prevSlide();
-          resetInterval();
-        }
       }
+    }
 
-      // Pause autoplay when tab is not visible
-      document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-          clearInterval(slideInterval);
-        } else {
-          slideInterval = setInterval(nextSlide, 5000);
-        }
-      });
+    // Pause autoplay when tab is not visible
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        clearInterval(slideInterval);
+      } else {
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+    });
 
-      // Initialize
-      updateSliderPosition();
-    </script>
-  </body>
+    // Initialize
+    updateSliderPosition();
+  </script>
+</body>
+
 </html>
