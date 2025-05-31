@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Navbar with Animated Hover</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .bg-custom-blue {
+        /* background-color: #003380; Navbar background */
+        background-color: white;
+      }
+      /* Animated underline effect */
+      .hover-underline {
+        position: relative;
+        display: inline-block;
+      }
+      .hover-underline {
+        color: black;
+      }
+      .hover-underline::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: #ffd700; /* Golden underline */
+        transition: width 0.4s ease;
+      }
+      .hover-underline:hover::after {
+        width: 100%;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .slider-container {
+        margin-top: 2rem;
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        /* Reduced height */
+        height: 700px;
+        background-color: #444444;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+        width: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        flex: 0 0 100%;
+        position: relative;
+        background-color: #666666;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+
+      .slide-content {
+        width: 40%;
+        color: white;
+        padding-left: 10%;
+        z-index: 2;
+      }
+
+      .slide-content .feature-list {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+        font-weight: 400;
+      }
+
+      .slide-content .tagline {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 0.8rem;
+      }
+
+      .slide-content .tagline h1{
+        font-size: 2.3rem;
+        
+      }
+
+      .slide-image {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .slide-image img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+      }
+
+      .prev-btn,
+      .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .prev-btn {
+        left: 10px;
+      }
+
+      .next-btn {
+        right: 10px;
+      }
+
+      .slide-indicators {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+      }
+
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+      }
+
+      .indicator.active {
+        background-color: white;
+      }
+
+      @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .fade-delay-1 { animation-delay: 0.1s; }
+    .fade-delay-2 { animation-delay: 0.2s; }
+    .fade-delay-3 { animation-delay: 0.3s; }
+    .fade-delay-4 { animation-delay: 0.4s; }
+    .fade-delay-5 { animation-delay: 0.5s; }
+
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .slide-content .feature-list {
+          font-size: 1.1rem;
+          line-height: 1.5;
+        }
+
+        .slide-content .tagline {
+          font-size: 1.6rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .slider-container {
+          height: 600px;
+        }
+
+        .slide {
+          flex-direction: column;
+        }
+
+        .slide-content,
+        .slide-image {
+          width: 100%;
+          padding: 15px;
+          text-align: center;
+        }
+
+        .slide-content {
+          padding-bottom: 0;
+        }
+
+        .slide-image {
+          height: 55%;
+        }
+
+        .slide-content .feature-list {
+          font-size: 1.5rem;
+          line-height: 1.3;
+          margin-bottom: 0.6rem;
+        }
+
+        .slide-content .tagline {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slider-container {
+          height: 500px;
+        }
+
+        .slide-content .feature-list {
+          font-size: 1rem;
+          line-height: 1.2;
+        }
+
+        .slide-content .tagline {
+          font-size: 1.2rem;
+          text-align: center;
+          
+        }
+
+        .prev-btn,
+        .next-btn {
+          width: 25px;
+          height: 25px;
+          font-size: 0.9rem;
+        }
+      }
+
+      /* _++++++++++++++++++++++++++++ */
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f4f4f4; /* Example background */
+        color: #333; /* Example text color */
+      }
+
+      .container {
+        /* max-width: 1400px;  */
+        min-width: 90%;
+        margin: 40px auto;
+        padding: 30px; /* Slightly increased padding */
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px; /* Increased gap */
+        opacity: 0; /* Start with 0 opacity for fade-in */
+        animation: fadeIn 0.7s ease-out forwards 0.3s; /* Adjusted fade-in */
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px); /* Subtle slide-in with fade */
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .left-section {
+        flex: 1 1 500px; /* Adjusted base width for text and image */
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .left-section h2 {
+        margin-bottom: 10px;
+      }
+
+      .image-section {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        animation: zoomIn 1s ease-out;
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(1.05);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .image-section img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .right-section {
+        flex: 1 1 500px; /* Adjusted base width for features */
+        padding: 25px;
+        animation: slideInRight 0.8s ease-out;
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        ); /* Wider min width */
+        gap: 25px; /* Increased gap */
+        margin-top: 30px;
+      }
+
+      .feature-block {
+        background-color: #f9f9f9;
+        padding: 20px; /* Increased padding */
+        border-radius: 8px; /* Slightly rounded corners */
+        border: 1px solid #eee;
+        text-align: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover */
+        animation: fadeInUp 0.6s ease-out backwards; /* Initial fadeInUp */
+      }
+
+      /* Unique fadeInUp animation with staggered delay */
+      .feature-block:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .feature-block:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .feature-block:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .feature-block:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(30px);
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1; /* Ensure final opacity is 1 */
+        }
+      }
+
+      .feature-block:hover {
+        transform: translateY(-5px); /* Move up slightly on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18); /* More pronounced shadow */
+      }
+
+      .feature-icon {
+        font-size: 2.5em; /* Larger icons */
+        color: #007bff; /* Example icon color */
+        margin-bottom: 15px;
+        display: flex; /* To center the image inside */
+        justify-content: center;
+        align-items: center;
+        height: 50px; /* Adjust as needed for icon size */
+      }
+
+      .feature-icon img {
+        max-width: 100%;
+        max-height: 76%;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .left-section,
+        .right-section {
+          width: 100%;
+          order: 0; /* Reset order on smaller screens */
+          gap: 0%;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+        .left-section,
+        .right-section {
+          gap: 0%;
+        }
+        .right-section {
+          margin-top: -5rem;
+        }
+        .image-section {
+          margin-top: 4rem;
+          /* padding-top: 1rem; */
+        }
+      }
+
+
+
+      body, html {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .stats-section {
+      background: url('your-background.jpg4') no-repeat center center/cover;
+      position: relative;
+      color: black;
+      padding: 10px 0px;
+      text-align: center;
+      margin-top: -2rem;
+    }
+
+    .overlay {
+      /* background-color: rgba(0, 0, 0, 0.6); */
+      padding: 40px 20px;
+      border-radius: 10px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+    }
+
+    h1 .highlight {
+      color: #ff2e2e;
+      font-weight: bold;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+      margin-top: 3rem;
+    }
+
+    .stat-item {
+      flex: 1 1 180px;
+      max-width: 220px;
+      background: rgba(59, 12, 12, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-item i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #000;
+    }
+
+    .stat-item h2 {
+      font-size: 2rem;
+      margin: 10px 0;
+      color: #000;
+    }
+
+    .stat-item p {
+      font-size: 0.95rem;
+      color: #000;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(40px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .stat-item h2 {
+        font-size: 1.6rem;
+      }
+
+      .stat-item {
+        margin-bottom: 20px;
+      }
+      .stats-grid{
+        gap: 40px;
+      }
+    }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav
+      class="flex items-center justify-between p-4 md:p-6 bg-custom-blue text-white shadow-md"
+    >
+      <!-- Left: Logo -->
+      <div class="flex items-center space-x-3">
+        <img
+          src="logo/logo.jpeg"
+          alt="Shlok Enterprise Logo"
+          class="h-14 w-auto"
+        />
+      </div>
+
+      <!-- Right: Menu Links (Desktop) -->
+      <div class="hidden md:flex space-x-10 text-2xl font-bold">
+        <a href="index.html" class="hover-underline">Home</a>
+        <a href="about.html" class="hover-underline">About</a>
+        <a href="product.html" class="hover-underline">Product</a>
+        <a href="contact.html" class="hover-underline">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-12 h-12" fill="none" stroke="black" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden bg-custom-black text-black font-bold"
+    >
+      <a
+        href="index.html"
+        class="block px-6 py-5 text-xl hover:bg-[#555555] transition duration-300"
+        >Home</a
+      >
+      <a
+        href="#"
+        class="block px-6 py-5 text-xl hover:bg-[#555555] transition duration-300"
+        >About</a
+      >
+      <a
+        href="product.html"
+        class="block px-6 py-5 text-xl hover:bg-[#555555] transition duration-300"
+        >Product</a
+      >
+      <a
+        href="contact.html"
+        class="block px-6 py-5 text-xl hover:bg-[#555555] transition duration-300"
+        >Contact</a
+      >
+    </div>
+
+    <div class="slider-container">
+      <div class="slides">
+        <div class="slide">
+          <div class="slide-content">
+            <div class="feature-list">
+            </div>
+            <div class="tagline"><h1>Welcome To Shlok Enterprises</h1>We Are One Of The Best Stociest & Service Provider From 2007 For Industries.</div>
+          </div>
+          <div class="slide-image">
+            <img src="logo/logo1.png" alt="OSKO Industrial Valve" />
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-content">
+            <div class="feature-list">
+            
+            </div>
+            <div class="tagline">We Are An Authorized Channel Partner For <br> Valves 
+               And Non-metallic Pipes And Fittings<br> And Are Providing Integrated Solutions For<br> The Industry.</div>
+          </div>
+          <div class="slide-image">
+            <img src="logo/Logo 2.png" alt="OSKO Valve Product" />
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-content">
+            <div class="feature-list">
+          
+            </div>
+            <div class="tagline">With best experience in the field of valve manufacturing, We Offer wide range of valves solutions for all types of industrial requirements</div>
+          </div>
+          <div class="slide-image">
+            <img src="logo/Logo 3.png" alt="OSKO Valve Technology" />
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-content">
+            <div class="feature-list">
+          
+            </div>
+            <div class="tagline">We not only control quality but assure also by observing the strictest quality standards. The Company also observes trouble free performance at every
+              level to prove its class product.</div>
+          </div>
+          <div class="slide-image">
+            <img src="logo/Logo 4.png" alt="OSKO Valve Engineering" />
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-content">
+            <div class="feature-list">
+              
+            </div>
+            <div class="tagline">we take pride in being a trusted partner to industries worldwide. We're not just a valve supplier - we're a solutions provider
+              dedicated to your success.</div>
+          </div>
+          <div class="slide-image">
+            <img src="logo/Logo 5.png" alt="OSKO Customer Support" />
+          </div>
+        </div>
+      </div>
+
+      <button class="prev-btn">&#10094;</button>
+      <button class="next-btn">&#10095;</button>
+
+      <div class="slide-indicators">
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+      </div>
+
+      <div class="red-border"></div>
+    </div>
+
+    <div class="container">
+      <div class="left-section">
+        <h2>
+          Senso Valves Is One Of The Biggest Manufacturers & Exporters Of
+          Industrial Valves In India
+        </h2>
+        <p>The Largest Exporter of <a href="#">Valves</a></p>
+        <div class="image-section">
+          <img src="logo/Logo 2.png" alt="OSKO Valve Product" />
+        </div>
+      </div>
+      <div class="right-section">
+        <h2>Why Senso Valves?</h2>
+        <div class="features-grid">
+          <div class="feature-block">
+            <div class="feature-icon">
+              <img src="logo/dislike.png" alt="Best Quality" />
+            </div>
+            <h3>Best Quality</h3>
+            <p>
+              Our knowledge in the domain blended with the vast experience has
+              enabled us to serve our customers with the best they need.
+            </p>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon">
+              <img src="logo/rupee-indian.png" alt="Exact Price" />
+            </div>
+            <h3>Exact Price</h3>
+            <p>We aim to provide more then best in worth money Price.</p>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon">
+              <img src="logo/rating_7980008.png" alt="Satisfaction" />
+            </div>
+            <h3>Satisfaction Response</h3>
+            <p>
+              Customer satisfaction is the what makes us happy and we look upto.
+            </p>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon">
+              <img src="logo/clock.png" alt="Timely Delivery" />
+            </div>
+            <h3>Timely Delivery</h3>
+            <p>Timely Delivery with quality work is what we are known for.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="stats-section">
+      <div class="overlay">
+        <h1>
+          The Valve, Product <span class="highlight">Manufacturing</span> Industries.
+        </h1>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <h2>500+</h2>
+            <p>Trusted Clients</p>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-project-diagram"></i>
+            <h2>500+</h2>
+            <p>Finished Projects</p>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-industry"></i>
+            <h2>18</h2>
+            <p>Years of Experience</p>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-balance-scale"></i>
+            <h2>2000</h2>
+            <p>Nos Per Month Capacity</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="py-12 px-4 sm:px-6 lg:px-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8">Products We Offer</h2>
+    
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <!-- Product Card 1 -->
+        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-1">
+          <img src="logo/Sensp.png" alt="Aluminium Valve" class="mb-4 h-48 object-contain">
+          <h3 class="font-semibold text-lg">Senso Manual & Automation Valves</h3>
+        </div>
+    
+        <!-- Product Card 2 -->
+        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-2">
+          <img src="logo/Vectus PPRC.png" alt="Wafer Type Valve" class="mb-4 h-48 object-contain">
+          <h3 class="font-semibold text-lg">Vectus PPRC Pipes & Fittings</h3>
+        </div>
+    
+        <!-- Product Card 3 -->
+        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-3">
+          <img src="logo/Vectus Composite.jpg" alt="Double Offset Valve" class="mb-4 h-48 object-contain">
+          <h3 class="font-semibold text-lg">Vectus Composite Pipes & Fittings</h3>
+        </div>
+    
+        <!-- Product Card 4 -->
+        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-4">
+          <img src="logo/HDPE.jpg" alt="Ball Valve" class="mb-4 h-48 object-contain">
+          <h3 class="font-semibold text-lg">HDPE/PP Pipes & Fittings</h3>
+        </div>
+    
+        <!-- Product Card 5 -->
+        <div class="bg-white rounded-2xl shadow p-4 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 fade-up fade-delay-5">
+          <img src="logo/5_img.png" alt="Other Valve" class="mb-4 h-48 object-contain">
+          <h3 class="font-semibold text-lg">Fabrication For Non-Metallic Pipes & Fittings</h3>
+        </div>
+      </div>
+    </section>
+    
+  
+      <!-- Button -->
+      <div class="mt-10 py-5 flex justify-center">
+        <button class="px-6 py-2 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition rounded-lg">
+          <a href="product.html">VIEW MORE PRODUCTS</a>
+         
+        </button>
+      </div>
+    </section>  
+
+    <script>
+      // Toggle mobile menu
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const slides = document.querySelector(".slides");
+      const slideItems = document.querySelectorAll(".slide");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+      const indicators = document.querySelectorAll(".indicator");
+
+      let currentSlide = 0;
+      const totalSlides = slideItems.length;
+
+      // Set initial position
+      function updateSliderPosition() {
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("active", index === currentSlide);
+        });
+      }
+
+      // Next slide
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSliderPosition();
+      }
+
+      // Previous slide
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSliderPosition();
+      }
+
+      // Auto slide
+      let slideInterval = setInterval(nextSlide, 5000);
+
+      // Reset timer on manual navigation
+      function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+
+      // Event listeners
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetInterval();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetInterval();
+      });
+
+      // Indicator clicks
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+          currentSlide = index;
+          updateSliderPosition();
+          resetInterval();
+        });
+      });
+
+      // Touch events for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      slides.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      slides.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+          // Swipe left
+          nextSlide();
+          resetInterval();
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+          // Swipe right
+          prevSlide();
+          resetInterval();
+        }
+      }
+
+      // Pause autoplay when tab is not visible
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          clearInterval(slideInterval);
+        } else {
+          slideInterval = setInterval(nextSlide, 5000);
+        }
+      });
+
+      // Initialize
+      updateSliderPosition();
+    </script>
+  </body>
+</html>

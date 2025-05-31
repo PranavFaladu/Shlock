@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us - Shlok Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Contact Shlok Enterprise for all your pipe fitting needs. Get in touch with our team for inquiries and support.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="logo/logo.jpeg" alt="Shlok Enterprise Logo">
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="product.html" class="nav-link">Products</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 py-0 mt-12">
+      <h1 class="page-title">Contact</h1>
+      <p class="page-subtitle">
+        Have questions about our products or need assistance with your order?
+        Our team is here to help!
+      </p>
+
+      <div class="flex flex-wrap gap-8 mb-16">
+        <!-- Contact Information Card -->
+        <div class="card flex-1 min-w-[300px]">
+          <div class="p-8">
+            <h2 class="text-2xl font-bold mb-8">Get In Touch</h2>
+            
+            <div class="space-y-6">
+              <div class="contact-info-group">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Our Location</h3>
+                  <p class="text-gray-600">123 Business Street, Industrial Area, Surat, Gujarat, India</p>
+                </div>
+              </div>
+
+              <div class="contact-info-group">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Phone Number</h3>
+                  <p class="text-gray-600">+91 1234567890</p>
+                  <p class="text-gray-600">+91 9876543210</p>
+                </div>
+              </div>
+
+              <div class="contact-info-group">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Email Address</h3>
+                  <p class="text-gray-600">info@shlokenterprise.com</p>
+                  <p class="text-gray-600">support@shlokenterprise.com</p>
+                </div>
+              </div>
+
+              <div class="contact-info-group">
+                <div class="contact-icon">
+                  <i class="far fa-clock"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800">Working Hours</h3>
+                  <p class="text-gray-600">Monday - Saturday: 9:00 AM - 8:00 PM</p>
+                  <p class="text-gray-600">Sunday: Closed</p>
+                </div>
+              </div>
+
+              <div class="pt-4">
+                <h3 class="font-semibold text-gray-800 mb-3">Follow Us</h3>
+                <div class="flex space-x-4">
+                  <a href="#" class="social-icon hover:bg-blue-600">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-icon hover:bg-pink-600">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="social-icon hover:bg-blue-400">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-icon hover:bg-red-600">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="#" class="social-icon hover:bg-blue-700">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="card flex-[1.5] min-w-[300px]">
+          <div class="p-8">
+            <h2 class="text-2xl font-bold mb-8">Send Us a Message</h2>
+            <form class="contact-form">
+              <!-- Name Fields -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="form-group">
+                  <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="form-group">
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+
+              <!-- Subject -->
+              <div class="mb-6 form-group">
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+
+              <!-- Message -->
+              <div class="mb-6 form-group">
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-group">
+                <button type="submit" class="submit-btn w-full py-3 px-6 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.002062220907!2d72.8013143149327!3d21.14953548592909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d8b9a7d9c1d%3A0x6a1c0d1f8e2f3c4d!2sShlok%20Enterprise!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- About Column -->
+          <div class="footer-section">
+            <h3 class="text-xl font-bold mb-4">About Us</h3>
+            <p class="text-gray-400 mb-4">
+              Shlok Enterprise is a leading provider of high-quality pipes and fittings, serving customers across India with reliable products and exceptional service.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul>
+              <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+              <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+              <li><a href="product.html" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+              <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Products -->
+          <div class="footer-section">
+            <h3 class="text-xl font-bold mb-4">Our Products</h3>
+            <ul>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">PVC Pipes</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">CPVC Pipes</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">UPVC Pipes</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">HDPE Pipes</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Pipe Fittings</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                <span class="text-gray-400">123 Business Street, Surat, Gujarat, India</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone-alt mr-3 text-blue-400"></i>
+                <span class="text-gray-400">+91 1234567890</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                <span class="text-gray-400">info@shlokenterprise.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="far fa-clock mr-3 text-blue-400"></i>
+                <span class="text-gray-400">Mon-Sat: 9:00 AM - 8:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+          <p>&copy; 2023 Shlok Enterprise. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle with smooth animation
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenuButton = document.getElementById('close-menu');
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle('translate-y-0');
+        mobileMenu.classList.toggle('-translate-y-full');
+        document.body.style.overflow = mobileMenu.classList.contains('translate-y-0') ? 'hidden' : '';
+      }
+
+      mobileMenuButton.addEventListener('click', toggleMobileMenu);
+      closeMenuButton.addEventListener('click', toggleMobileMenu);
+
+      // Close menu when clicking on a nav link
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', toggleMobileMenu);
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton && !mobileMenuButton.contains(e.target)) {
+          if (mobileMenu.classList.contains('translate-y-0')) {
+            toggleMobileMenu();
+          }
+        }
+      });
+
+      // Form submission with validation
+      const contactForm = document.querySelector('.contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          // Basic form validation
+          const formData = new FormData(contactForm);
+          let isValid = true;
+          
+          // Validate required fields
+          const requiredFields = ['name', 'email', 'message'];
+          requiredFields.forEach(field => {
+            if (!formData.get(field).trim()) {
+              isValid = false;
+              const input = contactForm.querySelector(`[name="${field}"]`);
+              input.classList.add('border-red-500');
+              input.nextElementSibling?.classList.remove('hidden');
+            }
+          });
+          
+          if (!isValid) {
+            return;
+          }
+          
+          try {
+            // Here you would typically send the form data to your server
+            // For now, we'll just show a success message
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+            
+          } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('There was an error sending your message. Please try again later.');
+          } finally {
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalText || 'Send Message';
+          }
+        });
+        
+        // Clear validation errors when user starts typing
+        contactForm.querySelectorAll('input, textarea').forEach(input => {
+          input.addEventListener('input', () => {
+            input.classList.remove('border-red-500');
+            const errorMsg = input.nextElementSibling;
+            if (errorMsg && errorMsg.classList.contains('text-red-500')) {
+              errorMsg.classList.add('hidden');
+            }
+          });
+        });
+      }
+
+      // Animation on scroll
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.form-group, .card, .map-wrapper');
+        elements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // Run animation on scroll
+      window.addEventListener('load', animateOnScroll);
+      window.addEventListener('scroll', animateOnScroll);
+    </script>
+  </body>
+</html>
