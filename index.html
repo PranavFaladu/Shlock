@@ -33,37 +33,36 @@
 </head>
 
 <body class="bg-gray-50">
-  <!-- Navbar -->
   <nav class="navbar">
-    <!-- Logo -->
-    <div class="nav-logo">
-      <img src="logo/logo.jpeg" alt="Shlok Enterprise Logo">
-    </div>
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="logo/logo.jpeg" alt="Shlok Enterprise Logo">
+      </div>
 
-    <!-- Desktop Navigation -->
-    <div class="nav-links">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="product.html" class="nav-link">Products</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="product.html" class="nav-link">Products</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
 
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" id="mobile-menu-btn">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
-    </button>
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="product.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    
   <div class="slider-container">
     <div class="slides">
       <div class="slide">
@@ -351,12 +350,13 @@
 
   <script>
     // Toggle mobile menu
-    const menuBtn = document.getElementById("mobile-menu-btn"); // ✅ fixed ID
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+   // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+      });
 
     const slides = document.querySelector(".slides");
     const slideItems = document.querySelectorAll(".slide");
